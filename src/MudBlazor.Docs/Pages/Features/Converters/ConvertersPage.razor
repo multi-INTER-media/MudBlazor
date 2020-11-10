@@ -3,6 +3,12 @@
 
 <DocsPage MaxWidth="MaxWidth.Large">
     <DocsPageHeader Title="Converters" SubTitle="Converters are essential for binding input elements to your model.">
+        <Description>
+            When you bind a non-string value to a <CodeInline Tag="true">MudTextField<Tag>T</Tag></CodeInline> or any other input element that supports a value of type T then a <CodeInline>Converter</CodeInline>
+            converts that value to string for display and converts the user's input back to T. This happens automatically without you having to do anything special. <br/>
+            MudBlazor's <CodeInline>DefaultConverter<Tag>T</Tag></CodeInline> is pretty capable as you can see below but sometimes 
+            you'll want to use your own conversion functions. This page is all about that.
+        </Description>
     </DocsPageHeader>
     <DocsPageContent>
         <DocsPageSection>
@@ -381,10 +387,11 @@
                     </MudText>
                 </Description>
             </SectionHeader>
+
             <SectionContent DarkenBackground="false" FullWidth="true">
                 <SpecialConverterExample />
             </SectionContent>
-            <SectionSource Code="SpecialConverterExample" ShowCode="true" />
+            <SectionSource Code="SpecialConverterExample" ShowCode="false" />
         </DocsPageSection>
     </DocsPageContent>
 </DocsPage>
