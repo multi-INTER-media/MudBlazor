@@ -35,16 +35,23 @@
     </MudNavGroup>
     <MudNavGroup Title="Features" Icon="@Icons.Material.DeveloperBoard" Expanded="false" ExpandIcon="@Icons.Material.ExpandMore">
         <MudNavLink Href="features/breakpoints">Breakpoints</MudNavLink>
+        <MudNavLink Href="features/border-radius">Border Radius</MudNavLink>
         <MudNavLink Href="features/colors">Colors</MudNavLink>
         <MudNavLink Href="features/converters">Converters</MudNavLink>
         <MudNavLink Href="features/elevation">Elevation</MudNavLink>
         <MudNavLink Href="features/flex">Flex</MudNavLink>
         <MudNavLink Href="features/icons">Icons</MudNavLink>
         <MudNavLink Href="features/spacing">Spacing</MudNavLink>
-
     </MudNavGroup>
     <MudNavGroup Title="Customization" Icon="@Icons.Material.Handyman" Expanded="false" ExpandIcon="@Icons.Material.ExpandMore">
         <MudNavLink Href="customization/default-theme">Default Theme</MudNavLink>
+        <MudNavGroup Title="Theming" Expanded="true" ExpandIcon="@Icons.Material.ExpandMore">
+            <MudNavLink Href="customization/theming/overview">Overview</MudNavLink>
+            <MudNavLink Href="customization/theming/palette">Palette</MudNavLink>
+            @*<MudNavLink Href="customization/theming/layoutprops">Layout Properties</MudNavLink>
+            <MudNavLink Href="customization/theming/shadows">Shadows</MudNavLink>*@
+            <MudNavLink Href="customization/theming/z-index">z-index</MudNavLink>
+        </MudNavGroup>
     </MudNavGroup>
     <MudNavGroup Title="About" Icon="@Icons.Custom.MudBlazor" Expanded="false" ExpandIcon="@Icons.Material.ExpandMore">
         <MudNavLink Href="project/credit">Credits</MudNavLink>
@@ -64,7 +71,6 @@
         DocsComponents.AddItem("Container", typeof(MudContainer))
                             .AddItem("Grid", typeof(MudGrid))
                             .AddItem("Hidden", typeof(MudHidden))
-                            .AddItem("Themes", typeof(MudThemeProvider))
                             .AddItem("Button", typeof(MudButton))
                             .AddItem("IconButton", typeof(MudIconButton))
 		                    .AddNavGroup("Charts", false, new DocsComponents()
@@ -79,10 +85,10 @@
                                 .AddNavGroup("Form Inputs & controls", false, new DocsComponents()
                                     .AddItem("Radio", typeof(MudRadio))
                                     .AddItem("Select", typeof(MudSelect<T>))
-                                    .AddItem("Slider", typeof(MudSlider))
+                                    .AddItem("Slider", typeof(MudSlider<T>))
                                     .AddItem("Switch", typeof(MudSwitch))
                                     .AddItem("Text Field", typeof(MudTextField<T>))
-                                    .AddItem("Forms", typeof(MudForm))
+                                    .AddItem("Form", typeof(MudForm))
                                     .AddItem("Autocomplete", typeof(MudAutocomplete<T>))
                                 )
                             .AddItem("AppBar", typeof(MudAppBar))

@@ -5,8 +5,11 @@
     <DocsPageContent>
         <DocsPageSection>
             <SectionHeader>
-                <Title>Persistent drawer</Title>
-                <Description>The drawer can be toggled open or closed. The drawer needs to be wrapped by the Layout component and the default state can be set by DrawerOpen parameter.</Description>
+                <Title>Drawer usage</Title>
+                <Description>
+                    The drawer must be inside a <CodeInline>MudLayout</CodeInline> component because it interacts with <CodeInline>AppBar</CodeInline> and <CodeInline>MainContent</CodeInline>. It can be toggled open or closed by setting its <CodeInline>Open</CodeInline> parameter.
+                    If you set the <CodeInline>Open</CodeInline> parameter using two-way binding <CodeInline>@("@bind-Open=\"...\"")</CodeInline> the drawer will close itself on navigation.
+                </Description>
             </SectionHeader>
             <SectionContent DarkenBackground="true" FullWidth="true">
                 <iframe src="/iframe/docs/examples/drawer/persistent" class="docs-iframe">
@@ -18,7 +21,7 @@
         <DocsPageSection>
             <SectionHeader>
                 <Title>Clipping</Title>
-                <Description></Description>
+                <Description>A drawer with <CodeInline>Clipped="true"</CodeInline> will not push the AppBar to the side when opening.</Description>
             </SectionHeader>
             <SectionContent DarkenBackground="true" FullWidth="true">
                 <iframe src="/iframe/docs/examples/drawer/clipped" class="docs-iframe">
@@ -29,15 +32,27 @@
         </DocsPageSection>
         <DocsPageSection>
             <SectionHeader>
-                <Title>Combined</Title>
-                <Description>If you want the users to choose layout on their own it's possible to use <CodeInline>DrawerOpen</CodeInline> and <CodeInline>DrawerClipped</CodeInline> as separate or combined functions.</Description>
+                <Title>Anchor drawer</Title>
+                <Description>With the <CodeInline>Anchor</CodeInline> property you can set it to left or right, the default mode is left.</Description>
             </SectionHeader>
             <SectionContent DarkenBackground="true" FullWidth="true">
-                <iframe src="/iframe/docs/examples/drawer/combined" class="docs-iframe">
-                    <DrawerCombinedExample />
+                <iframe src="/iframe/docs/examples/drawer/anchor" class="docs-iframe">
+                    <DrawerAnchorExample />
                 </iframe>
             </SectionContent>
-            <SectionSource Code="DrawerCombinedExample" ShowCode="false" GitHubFolderName="Drawer" />
+            <SectionSource Code="DrawerAnchorExample" GitHubFolderName="Drawer" />
+        </DocsPageSection>
+
+        <DocsPageSection>
+            <SectionHeader>
+                <Title>Double Drawers</Title>
+            </SectionHeader>
+            <SectionContent DarkenBackground="true" FullWidth="true">
+                <iframe src="/iframe/docs/examples/drawer/double" class="docs-iframe">
+                    <DrawerDoubleExample />
+                </iframe>
+            </SectionContent>
+            <SectionSource Code="DrawerDoubleExample" GitHubFolderName="Drawer" />
         </DocsPageSection>
     </DocsPageContent>
 </DocsPage>
