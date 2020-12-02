@@ -3,6 +3,7 @@ using MudBlazor.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Microsoft.AspNetCore.Components.Web;
 
 namespace MudBlazor
 {
@@ -19,6 +20,7 @@ namespace MudBlazor
             .AddClass($"mud-tabs-rounded", Rounded)
             .AddClass($"mud-tabs-vertical", Vertical)
             .AddClass($"mud-border-right", Border)
+            .AddClass($"mud-paper-outlined", Outlined)
             .AddClass($"mud-elevation-{Elevation.ToString()}" , Elevation != 0)
             .Build();
 
@@ -42,6 +44,11 @@ namespace MudBlazor
         /// If true, sets a border.
         /// </summary>
         [Parameter] public bool Border { get; set; }
+
+        /// <summary>
+        /// If true, toolbar will be outlined.
+        /// </summary>
+        [Parameter] public bool Outlined { get; set; }
 
         /// <summary>
         /// If true, centers the tabitems.
@@ -99,12 +106,13 @@ namespace MudBlazor
 
             return TabClass;
         }
-        void ActivatePanel(MudTabPanel panel)
+        void ActivatePanel(MudTabPanel panel, MouseEventArgs ev)
         {
             if(!panel.Disabled)
             {
                 ActivePanel = panel;
                 ActivePanelIndex = Panels.IndexOf(panel);
+                ActivePanel.OnClick.InvokeAsync(ev);
             }
         }
     }
